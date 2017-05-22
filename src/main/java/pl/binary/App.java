@@ -1,4 +1,6 @@
 package pl.binary;
+import com.sun.org.apache.xpath.internal.SourceTree;
+
 import java.util.Scanner;
 
 
@@ -26,14 +28,22 @@ public class App
 
         }
 
-
-        System.out.print("Reprezentacją liczby " + inputDecimal + " w postaci binarnej jest: " );
-        for (int i : toDecimal(inputDecimal))
-            System.out.print(i);
+        System.out.println("Reprezentacją liczby " + inputDecimal + " w postaci binarnej jest: " + tabToString(toDecimal(inputDecimal)));
 
 
-
-
+        //TODO
+        //Dlaczego for iteruje inaczej od Foreach'a?
+        /*
+        int[] testTab = toDecimal(inputDecimal);
+        System.out.println("For Each: ");
+        for(int i : testTab) {
+            System.out.print(testTab[i]);
+        }
+        System.out.println();
+        System.out.println("Zwykły for: ");
+        for(int i=0;i<4;i++)
+            System.out.print(testTab[i]);
+        */
     }
 
     public static int[] toDecimal(int input){
@@ -59,6 +69,12 @@ public class App
     }
 
     public static String tabToString(int[] arr){
-        return null;
+        String toString = null;
+
+        for(int i=0;i<4;i++)
+            toString = toString + arr[i];
+
+        return toString.substring(4);
     }
+
 }
