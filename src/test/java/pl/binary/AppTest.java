@@ -10,7 +10,7 @@ public class AppTest {
     @Test
     public void checkAllFifteenNumbers() {
 
-        assertEquals(0000,App.toDecimal(0));
+        assertEquals(Integer.toBinaryString(0),App.toDecimal(0));
         assertEquals(0001,App.toDecimal(1));
         assertEquals(0010,App.toDecimal(2));
         assertEquals(0011,App.toDecimal(3));
