@@ -29,5 +29,7 @@ public class AppTest {
     }
 
     @Test
-    public void ifInputIntIsNotFrom0to15() {
+    public void ifInputIntIsNotNumberFrom0to15() {
+
+    }
 }
