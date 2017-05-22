@@ -8,25 +8,10 @@ public class App
 {
     public static void main( String[] args )
     {
+
         System.out.println("Wpisz liczbę z przedziału od 0 do 15");
-        int inputDecimal;
 
-        while(true){
-
-            try {
-                inputDecimal = readFromUser();
-
-
-                if (inputDecimal >= 0 && inputDecimal <= 15) {
-                    break;
-                }
-                System.out.println("Wpisałeś liczbę: " + inputDecimal +  " a ta liczba nie jest z przedziału od 1 do 15. Wpisz raz jeszcze");
-            }
-            catch (java.util.InputMismatchException e) {
-                System.out.println("Pewnie wpisałeś literę, wpisz liczbę z przedziału od 1 do 15");
-            }
-
-        }
+        int inputDecimal = readFromUser();
 
         System.out.println("Reprezentacją liczby " + inputDecimal + " w postaci binarnej jest: " + tabToString(toDecimal(inputDecimal)));
 
@@ -63,9 +48,26 @@ public class App
     }
 
 
-    public static int readFromUser(){
-        Scanner userInput = new Scanner(System.in);
-        return userInput.nextInt();
+    public static int readFromUser() {
+        int decimalToReturn;
+        while (true) {
+
+            try {
+                Scanner userInput = new Scanner(System.in);
+                int inputDecimal = userInput.nextInt();
+
+
+                if (inputDecimal >= 0 && inputDecimal <= 15) {
+                    decimalToReturn = inputDecimal;
+                    break;
+                }
+                System.out.println("Wpisałeś liczbę: " + inputDecimal + " a ta liczba nie jest z przedziału od 1 do 15. Wpisz raz jeszcze");
+            } catch (java.util.InputMismatchException e) {
+                System.out.println("Pewnie wpisałeś literę, wpisz liczbę z przedziału od 1 do 15");
+            }
+
+        }
+    return decimalToReturn;
     }
 
     public static String tabToString(int[] arr){
