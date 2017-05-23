@@ -37,11 +37,7 @@ public class App
         int[] myArr = new int[4];
 
         for (int i = 3;i >= 0;i--) {
-            if (input % 2 == 0)
-                myArr[i] = 0;
-
-            if (input % 2 == 1)
-                myArr[i] = 1;
+            myArr[i] = input % 2;
             input = input / 2;
         }
         return myArr;
